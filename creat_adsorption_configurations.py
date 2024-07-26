@@ -19,8 +19,8 @@ For the nitrogen-doped graphene, we considerd there possible adsorption configur
 
 
 
-obpath='/share/home/zhengss/20210412niaosu/code_up/test'  # output path
-slab=read(r'/share/home/zhengss/20210412niaosu/slab/smx/POSCAR') # slab model with "POSCAR" formate 
+obpath=''  # output path
+slab=read(r'') # slab model with "POSCAR" formate 
 site=[44,45] #possible adsorption site
 
 
