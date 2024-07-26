@@ -261,12 +261,12 @@ def path_random_add(train_index,test_index,reaction_network,inter_list):
                 return train_index,test_index,inter_num 
 
 
-total_data=r'/share/home/zhengss/20210412niaosu/smx_4/202204101H/predict_data'
-total_data_bf=r'/share/home/zhengss/20210412niaosu/smx_4/202204101H/final_relax'
-base_path=r'/share/home/zhengss/20210412niaosu/smx_4/202204101H/base'
-relax_path=r'/share/home/zhengss/20210412niaosu/smx_4/202204101H/run_path'
-gaspath=r'/share/home/zhengss/20210412niaosu/gas_pf'
-#relax_path=r'/share/home/zhengss/20210412niaosu/smx_4/gauss/Nspecies'
+total_data=r''
+total_data_bf=r''
+base_path=r''
+relax_path=r''
+gaspath=r''
+#relax_path=r''
 s = time.time()
 
 bond_match = iso.categorical_edge_match('bond','')  
