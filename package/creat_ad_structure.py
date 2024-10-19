@@ -256,7 +256,7 @@ def double_cross_ad_structure(slab,mol,ad_site,mole_bond_atom=[],type="auto"): #
     slab = slab.copy()
     new_mol = mol.copy()
     positions = {}
-    for i in list(new_mol.nodes):   #初始化坐标信息
+    for i in list(new_mol.nodes):   
         positions[i]=(0,0,0)    
     vec_site_0=slab[ad_site[0]].position-slab[ad_site[1]].position
 
