@@ -43,10 +43,7 @@ c_form=-8.15
 o_form=-7.67
 h_form=-3.46
 n_form=-3.62
-electronegativity={"C":2.55,"N":3.04,"O":3.44,"H":2.20}
-men_num={"C":6,"N":7,"O":8,"H":1}
-valenc_elec={"C":4,"N":5,"O":2,"H":1}
-slab_dic={0:-437.657264,1:-442.23458}
+slab_dic={}
 
 def get_formation_e(i):   
     e=float(i[5])
@@ -275,10 +272,10 @@ ads_match = iso.categorical_node_match('symbol',"")  # example  nm = iso.categor
 
 gas=get_gasfile(gaspath)
  
-zy_det_step={('1_CO2', '1_COOH'):0.69,("1H","1_CO2"):0.4,('1_COOHNHOH', '5_CONHOH'):0.16}
+zy_det_step={}  
 
 # the possible frag of the intermediates
-frag_list=['CCNO', 'CCCO', 'CCN', 'CHNO', 'HO', 'HN', 'CCC', 'CHNNO', 'HNO', 'CNNO', 'CCHNN', 'CNN', 'CNO', 'CO', 'CHHNO', 'NO', 'CHHNN', 'CHHN', 'CNNOO', 'CHNOO', 'CCHNO', 'NNO', 'CCCHN', 'CHNN', 'CHN', 'CNOO', 'CCNN', 'CCCN', 'CN', 'CHO', 'HHNO', 'CCHN',"H"]
+frag_list=[]
 
 
 x_ini_class_data,y_ini_class_data,class_name_data=get_classfier_data(total_data_bf) 
@@ -286,7 +283,7 @@ x_ini_reg_data,y_ini_reg_data,reg_name_data=get_regre_data(relax_path)
 
 
 data_index=[i for i in range(0,len(class_name_data))]
-reactant_and_product=[i for i in range(0,len(class_name_data)) if class_name_data[i]=="1_NO2" or class_name_data[i]=="1_CONH2NH2" or class_name_data[i]=="1H"]
+reactant_and_product=[i for i in range(0,len(class_name_data)) if class_name_data[i]==" " or class_name_data[i]==" "]  #give the reactant and product
 print("rrrres",reactant_and_product)
 num_step=len(data_index)//10
 total_num=[]
@@ -409,7 +406,7 @@ for test_num in range(0,100):
             nh2_path=nx.all_simple_edge_paths(reaction_network,"1_NO2",'1_CONH2NH2')
             conver_flag,inter_list=get_gzy_path_no_inter(nh2_path,zy_det_step)       
             if conver_flag=="reach object" :
-                    print("reach_________________________________________________")
+                    print("reach the real pathway")
                     t1 = time.time()
                     total_num.append(len(y_train_class)) 
                     print("inter",inter_list)
